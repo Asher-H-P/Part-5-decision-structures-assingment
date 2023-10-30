@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,14 +11,19 @@ namespace Part_5_decision_structures_assingment
     {
         static void Main(string[] args)
         {
-            Bank();
-        }
-        public static void Bank()
-        {
             Random generator = new Random();
+            Bank(generator.Next(100, 401));
+            Console.WriteLine();
+            Console.WriteLine();
+            Parking(generator.Next(1, 21));
+            Console.WriteLine();
+            Console.WriteLine();
+            Hurricane();
+        }
+        public static void Bank(double rent)
+        {
             bool done = false;
             double money = 150.75;
-            double rent = generator.Next(100, 400);
             while (!done)
             {
                 Console.WriteLine("Thank you for using a BoB ATM. How may I help you?");
@@ -26,20 +32,8 @@ namespace Part_5_decision_structures_assingment
                 Console.WriteLine("Withdraw (W)");
                 Console.WriteLine("Bill Payment (BP)");
                 Console.WriteLine("Account Balance (AB)");
-                Console.WriteLine("Quit (Q)");
                 string choice = Console.ReadLine().ToUpper();
                 Console.WriteLine();
-
-
-                //QQQQQQQQQQQQQQQQQQQQQQQQQQQ DONE
-                if (choice == "QUIT" || choice == "Q")
-                {
-                    Console.WriteLine("Goodbye!");
-                    done = true;
-                }
-                //QQQQQQQQQQQQQQQQQQQQQQQQQQQ DONE
-
-
                 money = money - 0.75;
 
 
@@ -202,10 +196,6 @@ namespace Part_5_decision_structures_assingment
                     {
                         Console.WriteLine("You've got a lot of money.");
                     }
-                    else
-                    {
-                        Console.WriteLine("ERROR!");
-                    }
                     Console.WriteLine();
                 }
                 //AAAAAAAAAAAAAAAAAAAAAAAAAAA DONE
@@ -237,6 +227,210 @@ namespace Part_5_decision_structures_assingment
                     done = true;
                 }
                 //RRRRRRRRRRRRRRRRRRRRRRRRRRR DONE
+            }
+        }
+        public static void Parking(int money)
+        {
+            int bill;
+            Console.WriteLine("Welcome to Sam's Parking garage.");
+            Console.WriteLine("First hour costs $4.");
+            Console.WriteLine("Additional hours cost $2.");
+            Console.WriteLine("Max cost is $20");
+            Console.WriteLine();
+            Console.Write("How many minutes were you parked for? ");
+            int mins = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
+            //1
+            if (mins >= 1 && mins <= 60)
+            {
+                Console.WriteLine($"You were parked for {mins} minutes. That means I'll charge for 1 hour.");
+                Console.WriteLine("Your bill is $4");
+                bill = 4;
+                if (money >= bill)
+                {
+                    Console.WriteLine("Thank you for paying your bill.");
+                }
+                else if (money < bill)
+                {
+                    Console.WriteLine("You don't have enough to pay your bill.");
+                }
+            }
+            //1
+
+            //2
+            else if (mins >= 61 && mins <= 120)
+            {
+                Console.WriteLine($"You were parked for {mins} minutes. That means I'll charge for 2 hours.");
+                Console.WriteLine("Your bill is $6");
+                bill = 6;
+                if (money >= bill)
+                {
+                    Console.WriteLine("Thank you for paying your bill.");
+                }
+                else if (money < bill)
+                {
+                    Console.WriteLine("You don't have enough to pay your bill.");
+                }
+            }
+            //2
+
+            //3
+            else if (mins >= 121 && mins <= 180)
+            {
+                Console.WriteLine($"You were parked for {mins} minutes. That means I'll charge for 3 hours.");
+                Console.WriteLine("Your bill is $8");
+                bill = 8;
+                if (money >= bill)
+                {
+                    Console.WriteLine("Thank you for paying your bill.");
+                }
+                else if (money < bill)
+                {
+                    Console.WriteLine("You don't have enough to pay your bill.");
+                }
+            }
+            //3
+
+            //4
+            else if (mins >= 181 && mins <= 240)
+            {
+                Console.WriteLine($"You were parked for {mins} minutes. That means I'll charge for 4 hours.");
+                Console.WriteLine("Your bill is $10");
+                bill = 10;
+                if (money >= bill)
+                {
+                    Console.WriteLine("Thank you for paying your bill.");
+                }
+                else if (money < bill)
+                {
+                    Console.WriteLine("You don't have enough to pay your bill.");
+                }
+            }
+            //4
+
+            //5
+            else if (mins >= 241 && mins <= 300)
+            {
+                Console.WriteLine($"You were parked for {mins} minutes. That means I'll charge for 5 hours.");
+                Console.WriteLine("Your bill is $12");
+                bill = 12;
+                if (money >= bill)
+                {
+                    Console.WriteLine("Thank you for paying your bill.");
+                }
+                else if (money < bill)
+                {
+                    Console.WriteLine("You don't have enough to pay your bill.");
+                }
+            }
+            //5
+
+            //6
+            else if (mins >= 301 && mins <= 360)
+            {
+                Console.WriteLine($"You were parked for {mins} minutes. That means I'll charge for 6 hours.");
+                Console.WriteLine("Your bill is $14");
+                bill = 14;
+                if (money >= bill)
+                {
+                    Console.WriteLine("Thank you for paying your bill.");
+                }
+                else if (money < bill)
+                {
+                    Console.WriteLine("You don't have enough to pay your bill.");
+                }
+            }
+            //6
+
+            //7
+            else if (mins >= 361 && mins <= 420)
+            {
+                Console.WriteLine($"You were parked for {mins} minutes. That means I'll charge for 7 hours.");
+                Console.WriteLine("Your bill is $16");
+                bill = 16;
+                if (money >= bill)
+                {
+                    Console.WriteLine("Thank you for paying your bill.");
+                }
+                else if (money < bill)
+                {
+                    Console.WriteLine("You don't have enough to pay your bill.");
+                }
+            }
+            //7
+
+            //8
+            else if (mins >= 421 && mins <= 480)
+            {
+                Console.WriteLine($"You were parked for {mins} minutes. That means I'll charge for 8 hours.");
+                Console.WriteLine("Your bill is $18");
+                bill = 18;
+                if (money >= bill)
+                {
+                    Console.WriteLine("Thank you for paying your bill.");
+                }
+                else if (money < bill)
+                {
+                    Console.WriteLine("You don't have enough to pay your bill.");
+                }
+            }
+            //8
+
+            //9
+            else if (mins >= 481 && mins <= 540)
+            {
+                Console.WriteLine($"You were parked for {mins} minutes. That means I'll charge for 9 hours.");
+                Console.WriteLine("Your bill is $20");
+                bill = 20;
+                if (money >= bill)
+                {
+                    Console.WriteLine("Thank you for paying your bill.");
+                }
+                else if (money < bill)
+                {
+                    Console.WriteLine("You don't have enough to pay your bill.");
+                }
+            }
+            //9
+
+            //10
+            else if (mins >= 541)
+            {
+                Console.WriteLine($"You were parked for {mins} minutes. That means I'll charge you the max amount.");
+                Console.WriteLine("Your bill is $20");
+                bill = 20;
+                if (money >= bill)
+                {
+                    Console.WriteLine("Thank you for paying your bill.");
+                }
+                else if (money < bill)
+                {
+                    Console.WriteLine("You don't have enough to pay your bill.");
+                }
+            }
+            //10
+
+            //11
+            else if (mins <= 0)
+            {
+                Console.WriteLine("Invalid response!");
+            }
+            //11
+
+            //12
+            else
+            {
+                Console.WriteLine("ERROR!");
+            }
+            //12
+        }
+        public static void Hurricane()
+        {
+            Console.WriteLine("There's a hurricane going on. What level category is it at? ");
+            int level = Convert.ToInt32(Console.ReadLine());
+            switch (level)
+            {
+                
             }
         }
     }
