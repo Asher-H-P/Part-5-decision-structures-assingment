@@ -19,6 +19,7 @@ namespace Part_5_decision_structures_assingment
             Console.WriteLine();
             Console.WriteLine();
             Hurricane();
+            Console.ReadLine();
         }
         public static void Bank(double rent)
         {
@@ -428,10 +429,14 @@ namespace Part_5_decision_structures_assingment
         {
             Console.WriteLine("There's a hurricane going on. What level category is it at? ");
             int level = Convert.ToInt32(Console.ReadLine());
+            int input = Convert.ToInt32(Console.ReadLine());
             switch (level)
             {
-                
-            }
+                bool v = level == 1; Console.WriteLine();
+                    
+            bool t = level == 2; Console.WriteLine();
+            
+            
         }
     }
 }
