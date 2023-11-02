@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -21,6 +22,12 @@ namespace Part_5_decision_structures_assingment
             Hurricane();
             Console.ReadLine();
         }
+
+        private static void Hurricane()
+        {
+            throw new NotImplementedException();
+        }
+
         public static void Bank(double rent)
         {
             bool done = false;
@@ -425,18 +432,27 @@ namespace Part_5_decision_structures_assingment
             }
             //12
         }
-        public static void Hurricane()
+        public static void Hurricane(int type)
         {
             Console.WriteLine("There's a hurricane going on. What level category is it at? ");
             int level = Convert.ToInt32(Console.ReadLine());
             int input = Convert.ToInt32(Console.ReadLine());
             switch (level)
             {
-                bool v = level == 1; Console.WriteLine();
-                    
-            bool t = level == 2; Console.WriteLine();
-            
-            
+                case typeof(): bool i = level == 1; Console.WriteLine();
+                    break;
+                case typeof(): bool ii = level == 2; Console.WriteLine();
+                    break;
+                case typeof(): bool iii = level == 3; Console.WriteLine();
+                    break;
+                case typeof(): bool iv = level == 4; Console.WriteLine();
+                    break;
+                case typeof(): bool v = level == 5; Console.WriteLine();
+                    break;
+                case typeof(): bool vi = level >= 6; Console.WriteLine();
+                    break;
+            }   
+
         }
     }
 }
