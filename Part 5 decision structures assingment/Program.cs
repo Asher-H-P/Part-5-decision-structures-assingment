@@ -19,7 +19,40 @@ namespace Part_5_decision_structures_assingment
             Parking(generator.Next(1, 21));
             Console.WriteLine();
             Console.WriteLine();
-            Hurricane();
+            bool done = false;
+            while (!done)
+            {
+                Console.WriteLine("There's a hurricane going on. What level category is it at? ");
+                int level = Convert.ToInt32(Console.ReadLine());
+                switch (level)
+                {
+                    case 1:
+                        Console.WriteLine("Current speed: 74-95 mph, 64-82 kts, 119-153 km/hr");
+                        done = true;
+                        break;
+                    case 2:
+                        Console.WriteLine("Current speed: 96-110 mph, 83-95 kts, 154-177 km/hr");
+                        done = true;
+                        break;
+                    case 3:
+                        Console.WriteLine("Current speed: 111-130 mph, 96-113 kts, 178-209 km/hr");
+                        done = true;
+                        break;
+                    case 4:
+                        Console.WriteLine("Current speed: 131-155 mph, 114-135 kts, 210-249 km/hr");
+                        done = true;
+                        break;
+                    case 5:
+                        Console.WriteLine("Current speed: >155 mph, >135 kts, >249 km/hr");
+                        done = true;
+                        break;
+                    case 6:
+                        Console.WriteLine("Invalid");
+                        break;
+                }
+                Console.WriteLine();
+                Console.WriteLine();
+            }
             Console.ReadLine();
         }
 
@@ -142,7 +175,7 @@ namespace Part_5_decision_structures_assingment
                             {
                                 money = money - rent;
                                 rent = 0;
-                                Console.WriteLine("You payed all your rent, & you still have ${money}.");
+                                Console.WriteLine($"You payed all your rent, & you still have ${money}.");
                             }
                             else if (rent > money && money <= 0)
                             {
@@ -434,25 +467,40 @@ namespace Part_5_decision_structures_assingment
         }
         public static void Hurricane(int type)
         {
-            Console.WriteLine("There's a hurricane going on. What level category is it at? ");
-            int level = Convert.ToInt32(Console.ReadLine());
-            int input = Convert.ToInt32(Console.ReadLine());
-            switch (level)
+            bool done = false;
+            while (!done)
             {
-                case typeof(): bool i = level == 1; Console.WriteLine();
-                    break;
-                case typeof(): bool ii = level == 2; Console.WriteLine();
-                    break;
-                case typeof(): bool iii = level == 3; Console.WriteLine();
-                    break;
-                case typeof(): bool iv = level == 4; Console.WriteLine();
-                    break;
-                case typeof(): bool v = level == 5; Console.WriteLine();
-                    break;
-                case typeof(): bool vi = level >= 6; Console.WriteLine();
-                    break;
-            }   
-
+                Console.WriteLine("There's a hurricane going on. What level category is it at? ");
+                int level = Convert.ToInt32(Console.ReadLine());
+                switch (level)
+                {
+                    case 1:
+                        Console.WriteLine("Current speed: 74-95 mph, 64-82 kts, 119-153 km/hr");
+                        done = true;
+                        break;
+                    case 2:
+                        Console.WriteLine("Current speed: 96-110 mph, 83-95 kts, 154-177 km/hr");
+                        done = true;
+                        break;
+                    case 3:
+                        Console.WriteLine("Current speed: 111-130 mph, 96-113 kts, 178-209 km/hr");
+                        done = true;
+                        break;
+                    case 4:
+                        Console.WriteLine("Current speed: 131-155 mph, 114-135 kts, 210-249 km/hr");
+                        done = true;
+                        break;
+                    case 5:
+                        Console.WriteLine("Current speed: >155 mph, >135 kts, >249 km/hr");
+                        done = true;
+                        break;
+                    case 6:
+                        Console.WriteLine("Invalid");
+                        Console.WriteLine();
+                        Console.WriteLine();
+                        break;
+                }
+            }
         }
     }
 }
